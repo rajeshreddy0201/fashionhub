@@ -15,7 +15,7 @@ const SignupPage = () => {
       </header>
 
       <div className="content">
-        <div className="images">
+        <div className="images-container">
           <img src="/mens.jpeg" alt="Men's Fashion" className="fashion-image" />
           <img src="/womens.jpeg" alt="Women's Fashion" className="fashion-image" />
         </div>
