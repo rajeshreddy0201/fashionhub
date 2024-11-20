@@ -6,13 +6,20 @@ const SignupPage = () => {
     <div className="signup-container">
       <header className="navbar">
         <div className="logo">
-            <img src="logo.png" alt="FashionHub Logo" />
+          <img src="/logo.jpeg" className="logo" alt="FashionHub Logo" />
         </div>
         <nav className="nav-links">
           <a href="#about">About us</a>
           <a href="#contact">Contact us</a>
         </nav>
       </header>
+
+      <div className="content">
+        <div className="images">
+          <img src="/mens.jpeg" alt="Men's Fashion" className="fashion-image" />
+          <img src="/womens.jpeg" alt="Women's Fashion" className="fashion-image" />
+        </div>
+      </div>
     </div>
   );
 };
