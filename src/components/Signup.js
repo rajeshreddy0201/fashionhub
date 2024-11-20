@@ -24,15 +24,15 @@ const SignupPage = () => {
           <h2>Sign up</h2>
           <form>
             <div className="form-group">
-              <label>Name:</label>
+             <b><label>Name:</label></b> 
               <input type="text" name="name" placeholder="Enter your name" required />
             </div>
             <div className="form-group">
-              <label>Email:</label>
+              <b><label>Email:</label></b>
               <input type="email" name="email" placeholder="Enter your email" required />
             </div>
             <div className="form-group">
-              <label>Password:</label>
+              <b><label>Password:</label></b>
               <input
                 type="password"
                 name="password"
@@ -41,13 +41,13 @@ const SignupPage = () => {
               />
             </div>
             <div className="form-group gender-group">
-              <label>Gender:</label>
-              <label>
+              <b><label>Gender:</label></b>
+              <b><label>
                 <input type="radio" name="gender" value="male" required /> Male
-              </label>
-              <label>
+              </label></b>
+              <b><label>
                 <input type="radio" name="gender" value="female" required /> Female
-              </label>
+              </label></b>
             </div>
             <button type="submit" className="register-button">
               Register
