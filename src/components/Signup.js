@@ -24,7 +24,7 @@ const SignupPage = () => {
           <h2>Sign up</h2>
           <form>
             <div className="form-group">
-             <b><label>Name:</label></b> 
+              <b><label>Name:</label></b>
               <input type="text" name="name" placeholder="Enter your name" required />
             </div>
             <div className="form-group">
@@ -58,6 +58,13 @@ const SignupPage = () => {
           </p>
         </div>
       </div>
+
+      <footer className="footer">
+        <p>© 2024 FashionHub. All rights reserved.</p>
+        <p>
+          <a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a>
+        </p>
+      </footer>
     </div>
   );
 };
