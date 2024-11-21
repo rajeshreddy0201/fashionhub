@@ -64,7 +64,15 @@ const SignIn = () => {
           Don't have an account? <a href="/signup">Sign up</a>
         </p>
       </div>
+      <footer className="footer-signin">
+        <p>© 2024 FashionHub. All rights reserved.</p>
+        <p>
+          <a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a>
+        </p>
+      </footer>
     </div>
+
+    
   );
 };
 
