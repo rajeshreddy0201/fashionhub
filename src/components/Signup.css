@@ -9,16 +9,16 @@ body {
   
   .navbar {
     background-color: #e91e63;
-    padding: 40px 15px;
+    padding: 12px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   
-  .logo {
+  .logo.jpeg {
     color: white;
-    height:65px;
-    width: 65px;
+    height:60px;
+    width: 60px;
     justify-content: center;
   }
   
@@ -30,7 +30,8 @@ body {
   }
   
   .nav-links a:hover {
-    text-decoration: underline;
+    color:#e91e63;
+    background-color: white;
   }
 
   .content {
