@@ -1,5 +1,5 @@
 import React from "react";
-import './Home.css';
+import "./Home.css";
 
 const HomePage = () => {
   return (
@@ -19,11 +19,11 @@ const HomePage = () => {
       </header>
       <div className="main-content">
         <div className="image-grid">
-          <img src="/fashion1.jpeg" alt="Fashion 1" className="image" />
-          <img src="/fashion2.jpeg" alt="Fashion 2" className="image" />
-          <img src="/fashion3.jpeg" alt="Fashion 3" className="image" />
-          <img src="/fashion4.jpeg" alt="Fashion 4" className="image" />
-          <img src="/fashion5.jpeg" alt="Fashion 5" className="image" />
+          <img src="/fashion1.jpeg" alt="Fashion 1" className="image1" />
+          <img src="/fashion2.jpeg" alt="Fashion 2" className="image2" />
+          <img src="/fashion3.jpeg" alt="Fashion 3" className="image3" />
+          <img src="/fashion4.jpeg" alt="Fashion 4" className="image4" /><br></br>
+          <img src="/fashion5.jpeg" alt="Fashion 5" className="image5" />
         </div>
         <div className="welcome-section">
           <h1>Welcome to FashionHub!</h1>
