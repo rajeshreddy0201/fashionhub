@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import { auth} from "../firebase"; 
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import "./Signup.css";
 
-const SignupPage = () => {
-    
+const SignUp = () => {
+    const [name,setName] = useState('');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const [gender,setGender] = useState('');
+    const navigate = useNavigate();
+    const [error,setError] = useState(null);
+
+    const handleRegister = async(e) => {
+        e.preventDefault();
+        try{
+            const userCredential = await createUserWithEmailAndPassword(auth,email,password);
+            console.log(userCredential)
+            navigate('/signin')
+        }catch(error){
+            setError(error.message);
+        }
+    };
+
   return (
     <div className="signup-container">
       <header className="navbar">
@@ -23,14 +43,28 @@ const SignupPage = () => {
 
         <div className="signup-form">
           <h2>Sign up</h2>
-          <form>
+          <form onSubmit={handleRegister}>
             <div className="form-group">
               <b><label>Name:</label></b>
-              <input type="text" name="name" placeholder="Enter your name" required />
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className="form-group">
               <b><label>Email:</label></b>
-              <input type="email" name="email" placeholder="Enter your email" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="form-group">
               <b><label>Password:</label></b>
@@ -39,27 +73,41 @@ const SignupPage = () => {
                 name="password"
                 placeholder="Enter your password"
                 required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="form-group gender-group">
               <b><label>Gender:</label></b>
               <b><label>
-                <input type="radio" name="gender" value="male" required /> Male
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  required
+                  onChange={(e) => setGender(e.target.value)}
+                /> Male
               </label></b>
               <b><label>
-                <input type="radio" name="gender" value="female" required /> Female
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  required
+                  onChange={(e) => setGender(e.target.value)}
+                /> Female
               </label></b>
             </div>
             <button type="submit" className="register-button">
               Register
             </button>
           </form>
+          {error && <p className="error">{error}</p>}
           <p className="signin-link">
-            Already have an account? <a href="#signin">Sign in</a>
+            Already have an account? <a href="/signin">Sign in</a>
           </p>
         </div>
       </div>
-
 
       <footer className="footer">
         <p>© 2024 FashionHub. All rights reserved.</p>
@@ -71,4 +119,4 @@ const SignupPage = () => {
   );
 };
 
-export default SignupPage;
+export default SignUp;
