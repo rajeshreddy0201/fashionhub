@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import { auth} from "../firebase"; 
+import { auth, database} from "../firebase"; 
+import { ref, set } from 'firebase/database';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import "./Signup.css";
 
-const SignUp = () => {
+const SignUp = (adduser) => {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
@@ -14,14 +15,21 @@ const SignUp = () => {
 
     const handleRegister = async(e) => {
         e.preventDefault();
-        try{
-            const userCredential = await createUserWithEmailAndPassword(auth,email,password);
-            console.log(userCredential)
-            navigate('/signin')
-        }catch(error){
-            setError(error.message);
-        }
-    };
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            const userData = {
+              name,
+              email,
+              password, 
+              gender
+            };
+            await set(ref(database, 'users/' + user.uid), userData);
+            navigate('/signin'); 
+          } catch (err) {
+            setError(err.message);
+          }
+        };
 
   return (
     <div className="signup-container">
