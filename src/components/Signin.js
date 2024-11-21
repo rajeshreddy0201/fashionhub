@@ -34,6 +34,7 @@ const SignIn = () => {
       </header>
 
       <div className="signin-content">
+        <h2>Sign in</h2>
         <form className="signin-form" onSubmit={handleSignIn}>
           <div className="form-group">
             <b><label>Email:</label></b>
