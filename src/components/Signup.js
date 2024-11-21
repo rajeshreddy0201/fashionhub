@@ -59,6 +59,7 @@ const SignupPage = () => {
         </div>
       </div>
 
+
       <footer className="footer">
         <p>© 2024 FashionHub. All rights reserved.</p>
         <p>
