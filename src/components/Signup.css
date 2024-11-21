@@ -9,7 +9,7 @@ body {
   
   .navbar {
     background-color: #e91e63;
-    padding: 20px 15px;
+    padding: 30px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,8 +18,8 @@ body {
   .logo {
     color: white;
     font-size: 2px;
-    height:65px;
-    width: 65px;
+    height:100px;
+    width: 100px;
     justify-content: center;
   }
   
@@ -137,7 +137,7 @@ body {
     text-align: center;
     background-color: #e91e63;
     color: white;
-    padding: 25px 0;
+    padding: 35px 0;
     margin-top: 20px;
     position: relative;
     bottom: 0;

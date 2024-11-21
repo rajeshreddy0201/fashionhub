@@ -1,13 +1,31 @@
-import React from "react";
+import React ,{useState} from "react";
+import { useNavigate } from "react-router-dom";
+import {auth} from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import "./Signin.css";
 
 const SignIn = () => {
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
+    const navigate = useNavigate();
+    const [error,setError] = useState(null);
+
+    const handleSignIn = async(e) => {
+        e.preventDefault();
+        try{
+            const userCredential = await signInWithEmailAndPassword(auth,email,password);
+            console.log(userCredential)
+            navigate('/',{state :{email : userCredential.user.email }});
+        }catch(error){
+            setError(error.message);
+        }
+    };
 
   return (
     <div className="signin-container">
       <header className="navbar">
         <div className="logo">
-          <img src="/logo.jpeg" alt="FashionHub Logo" className="logo-image" />
+          <img src="/logo.jpeg" className="logo" alt="FashionHub Logo" />
         </div>
         <nav className="nav-links">
           <a href="#about">About us</a>
@@ -16,7 +34,7 @@ const SignIn = () => {
       </header>
 
       <div className="signin-content">
-        <form className="signin-form">
+        <form className="signin-form" onSubmit={handleSignIn}>
           <div className="form-group">
             <b><label>Email:</label></b>
               <input
