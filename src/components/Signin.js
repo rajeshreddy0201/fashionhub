@@ -2,7 +2,7 @@ import React ,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {auth} from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import "./Signin.css";
+import './Signin.css';
 
 const SignIn = () => {
     const [email,setEmail] = useState('');
@@ -15,7 +15,7 @@ const SignIn = () => {
         try{
             const userCredential = await signInWithEmailAndPassword(auth,email,password);
             console.log(userCredential)
-            navigate('/',{state :{email : userCredential.user.email }});
+            navigate('/Home',{state :{email : userCredential.user.email }});
         }catch(error){
             setError(error.message);
         }
