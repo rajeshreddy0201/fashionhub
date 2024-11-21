@@ -2,6 +2,7 @@ import React from "react";
 import "./Signup.css";
 
 const SignupPage = () => {
+    
   return (
     <div className="signup-container">
       <header className="navbar">
