@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import './Home.css';
 
 const HomePage = () => {
+    const navigate = useNavigate();
   return (
     <div className="homepage-container">
       <header className="navbar">
@@ -31,7 +33,9 @@ const HomePage = () => {
             Discover the latest styles and trends in clothing for every occasion.
           </p>
           <p className="tagline">shop, style and shine with us!</p>
-          <button className="shop-now-button">Shop now</button>
+          <button className="shop-now-button" onClick={() => navigate('/products')}>
+        Shop now
+      </button>
         </div>
       </div>
     </div>
