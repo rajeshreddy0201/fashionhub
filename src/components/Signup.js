@@ -5,7 +5,7 @@ import { ref, set } from 'firebase/database';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import './Signup.css';
 
-const SignUp = (adduser) => {
+const SignUp = () => {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
