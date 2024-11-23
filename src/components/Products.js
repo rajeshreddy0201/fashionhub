@@ -24,7 +24,7 @@ const ProductsPage = () => {
           <img src="/logo.jpeg" alt="FashionHub Logo" />
         </div>
         <nav className="nav-links">
-          <a href="#home">Home</a>
+          <a href="#Home">Home</a>
           <a href="#orders">Orders</a>
           <a href="#cart">My cart</a>
           <a href="#about">About us</a>
@@ -35,7 +35,12 @@ const ProductsPage = () => {
       <div className="products-container">
         <div className="products-header">
           <h1>Products</h1>
-          <button className="filter-button">Filter</button>
+          <select class="filter-button">
+            <option value="price">Filter</option>
+            <option value="price">Men</option>
+            <option value="name">Women</option>
+            <option value="brand">Kids</option>
+          </select>
         </div>
         <div className="products-grid">
           {products.map(product => (
