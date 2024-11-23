@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, database} from "../firebase"; 
 import { ref, set } from 'firebase/database';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import "./Signup.css";
+import './Signup.css';
 
 const SignUp = (adduser) => {
     const [name,setName] = useState('');
