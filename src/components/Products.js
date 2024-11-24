@@ -29,6 +29,10 @@ const ProductsPage = () => {
     }
   };
 
+  const addtoCart = (product) => {
+    console.log("Added to cart:", product);
+  };
+
   return (
     <div className="products-page-container">
       <header className="navbar">
@@ -62,7 +66,7 @@ const ProductsPage = () => {
               <h3>{product.brand}</h3>
               <p>{product.name}</p>
               <p>{product.price}</p>
-              <button className="add-to-cart-button">Add to cart</button>
+              <button className="add-to-cart-button" onChange={addtoCart}>Add to cart</button>
             </div>
           ))}
         </div>
