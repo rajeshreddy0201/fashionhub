@@ -9,29 +9,38 @@ body {
   
   .navbar {
     background-color: #e91e63;
-    padding: 12px 15px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .logo.jpeg {
-    color: white;
-    height:60px;
-    width: 60px;
-    justify-content: center;
+  .logo img {
+    height: 50px;
+    width: 50px;
   }
   
-  .nav-links a {
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav a {
     color: white;
-    margin-left: 25px;
+    margin-left: 20px;
     text-decoration: none;
-    font-size:20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
   }
   
-  .nav-links a:hover {
-    color:#e91e63;
+  nav a:hover {
+    color: #e91e63;
     background-color: white;
+    text-decoration: none;
   }
 
   .content {

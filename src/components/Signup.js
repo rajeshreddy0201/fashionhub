@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { Link, useNavigate } from "react-router-dom"; 
 import { auth, database} from "../firebase"; 
 import { ref, set } from 'firebase/database';
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -37,9 +37,9 @@ const SignUp = () => {
         <div className="logo">
           <img src="/logo.jpeg" className="logo" alt="FashionHub Logo" />
         </div>
-        <nav className="nav-links">
-          <a href="#about">About us</a>
-          <a href="#contact">Contact us</a>
+        <nav>
+          <Link to="/Aboutus">About us</Link>
+          <Link to="/Contactus">Contact us</Link>
         </nav>
       </header>
 

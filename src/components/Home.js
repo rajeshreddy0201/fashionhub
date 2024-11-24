@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import './Home.css';
 
 const HomePage = () => {
@@ -10,13 +10,13 @@ const HomePage = () => {
         <div className="logo">
           <img src="/logo.jpeg" alt="FashionHub Logo" />
         </div>
-        <nav className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#orders">Orders</a>
-          <a href="#cart">My cart</a>
-          <a href="#about">About us</a>
-          <a href="#contact">Contact us</a>
-          <a href="#signout">Signout</a>
+        <nav>
+          <Link to="/Home">Home</Link>
+          <Link to="/orders">Orders</Link>
+          <Link to="/Mycart">My Cart</Link>
+          <Link to="/Aboutus">About us</Link>
+          <Link to="/Contactus">Contact us</Link>
+          <Link to="/signin">Signout</Link>
         </nav>
       </header>
       <div className="main-content">
