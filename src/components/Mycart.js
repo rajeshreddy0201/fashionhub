@@ -39,16 +39,13 @@ const MyCart = ({ cart, removeFromCart }) => {
               </div>
               <button
                 onClick={() => removeFromCart(product.id)}
-                className="remove-button"
-              >
-                Remove
+                className="remove-button">Remove
               </button>
             </div>
           ))}
-          <div className="cart-summary">
             <p>Total Items: {cart.length}</p>
             <p>Total Price: ${totalPrice.toFixed(2)}</p>
-          </div>
+            <button className="checkout-button">Checkout</button>
         </div>
       )}
     </div>
