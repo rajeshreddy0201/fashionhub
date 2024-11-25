@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './Products.css';
 
-const ProductsPage = () => {
+const ProductsPage = ({ addToCart }) => {
   const allProducts = [
     { id: 1, category: "Men", brand: "H & M", name: "Oversized T-shirt", price: "$15.99", img: "/tshirt.jpeg" },
     { id: 2, category: "Men", brand: "H & M", name: "Men's Short", price: "$13.99", img: "/short.jpeg" },
@@ -29,9 +29,10 @@ const ProductsPage = () => {
     }
   };
 
-  const addtoCart = (product) => {
-    console.log("Added to cart:", product);
+  const addtoCart = () => {
+    alert("Product added to cart");
   };
+
 
   return (
     <div className="products-page-container">
@@ -66,7 +67,12 @@ const ProductsPage = () => {
               <h3>{product.brand}</h3>
               <p>{product.name}</p>
               <p>{product.price}</p>
-              <button className="add-to-cart-button" onChange={addtoCart}>Add to cart</button>
+              <button
+                className="add-to-cart-button"
+                onClick={() => addToCart(product)}
+              >
+                Add to cart
+              </button>
             </div>
           ))}
         </div>
