@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Mycart.css";
 
 
 const MyCart = ({ cart, removeFromCart }) => {
@@ -15,8 +16,12 @@ const MyCart = ({ cart, removeFromCart }) => {
           <img src="/logo.jpeg" alt="FashionHub Logo" />
         </div>
         <nav>
-          <Link to="/">Products</Link>
-          <Link to="/mycart">My Cart</Link>
+          <Link to="/Home">Home</Link>
+          <Link to="/orders">Orders</Link>
+          <Link to="/Mycart">My Cart</Link>
+          <Link to="/Aboutus">About us</Link>
+          <Link to="/Contactus">Contact us</Link>
+          <Link to="/signin">Signout</Link>
         </nav>
       </header>
       <h1>My Cart</h1>
