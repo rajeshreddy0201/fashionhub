@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./payment.css";
 
-const Payment = () => {
+const Payment = ({ cart, setOrders }) => {
+  const navigate = useNavigate();
+
   const handlePayment = () => {
     alert("Payment processed successfully!");
+    setOrders((prevOrders) => [...prevOrders, ...cart]);
+    navigate("/Home");
   };
 
   return (

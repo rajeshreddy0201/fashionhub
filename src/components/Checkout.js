@@ -5,7 +5,7 @@ import "./Checkout.css";
 const Checkout = () => {
   const navigate = useNavigate();
 
-  const handlePayment = () => {
+  const handleCheckout = () => {
     alert("Proceeding to payment...");
     navigate("/payment");
   };
@@ -62,7 +62,7 @@ const Checkout = () => {
             <label>Country:</label>
             <input type="text" placeholder="Enter your country" required />
           </div>
-          <button type="button" className="payment-button" onClick={handlePayment}>
+          <button type="button" className="payment" onClick={handleCheckout}>
             Proceed to payment
           </button>
         </form>

@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignIn from "./components/Signin";
 import SignUp from "./components/Signup";
-import Home from "./components/Home"; 
+import Home from "./components/Home";
 import Products from "./components/Products";
 import MyCart from "./components/Mycart";
 import Checkout from "./components/Checkout";
-import Payment from "./components/payment"; 
+import Payment from "./components/payment";
+import Orders from "./components/Orders";
 
 const App = () => {
   const [cart, setCart] = useState([]);
+  const [orders, setOrders] = useState([]);
 
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
@@ -30,7 +32,8 @@ const App = () => {
         <Route path="/products" element={<Products addToCart={addToCart} />} />
         <Route path="/mycart" element={<MyCart cart={cart} removeFromCart={removeFromCart} />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/payment" element={<Payment />} /> 
+        <Route path="/payment" element={<Payment cart={cart} setOrders={setOrders} />} />
+        <Route path="/orders" element={<Orders orders={orders} />} />
       </Routes>
     </Router>
   );
