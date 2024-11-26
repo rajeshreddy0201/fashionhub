@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Mycart.css";
 
 
 const MyCart = ({ cart, removeFromCart }) => {
+    const navigate = useNavigate();
   const totalPrice = cart.reduce(
     (total, product) => total + parseFloat(product.price.replace("$", "")),
     0
@@ -45,7 +46,7 @@ const MyCart = ({ cart, removeFromCart }) => {
           ))}
             <p>Total Items: {cart.length}</p>
             <p>Total Price: ${totalPrice.toFixed(2)}</p>
-            <button className="checkout-button">Checkout</button>
+            <button className="checkout-button" onClick={() => navigate('/checkout')}>Checkout</button>
         </div>
       )}
     </div>
